@@ -3,25 +3,23 @@
 #!icon=https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/png/music.png
 
 [Rewrite]
-^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(?:batch|v\d\/resource\/comment\/floor\/get|homepage\/block\/page|link\/page\/rcmd\/(block\/resource\/multi\/refresh|resource\/show)|user\/follow\/users\/mixed\/get|link\/home\/framework\/tab|link\/position\/show\/resource|link\/page\/discovery\/resource\/show) header-del x-aeapi
 ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/(?:e?api\/(ocpc\/)?ad\/|eapi\/(?:delivery\/(batch-)?deliver|moment\/tab\/info\/|side-bar\/mini-program\/music-service\/account|yunbei\/account\/entrance\/|community\/friends\/fans-group\/artist\/group\/|mine\/applet\/redpoint|music\/songshare\/text\/recommend\/|resniche\/position\/play\/new\/|resource\/comments?\/musiciansaid\/|user\/sub\/artist|ios\/version|mlivestream\/entrance\/playpage\/|link\/position\/show\/strategy|link\/scene\/show\/resource|v1\/content\/exposure\/comment\/banner\/)|w?eapi\/(?:activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|default\/|rcmd\/keyword\/|specialkeyword\/))|my\/podcast\/tab\/recommend) reject-dict
 
 [Argument]
 FX=switch, false, true, tag=底部-发现, desc=是否
 MY=switch, false, true, tag=底部-漫游, desc=是否
 DT=switch, false, true, tag=底部-笔记, desc=是否
-PRGG=switch, false, true, tag=主页-问候语, desc=是否
-PRRK=switch, false, true, tag=主页-排行榜, desc=是否
-PRST=switch, false, true, tag=主页-最近常听, desc=是否
+PRRK=switch, false, true, tag=主页-音乐排行榜, desc=是否
+PRST=switch, false, true, tag=主页-我的最近常听, desc=是否
 HMPR=switch, false, true, tag=主页-音乐合伙人, desc=是否
-PRCN=switch, false, true, tag=主页-你的专属歌单, desc=是否
+PRCN=switch, false, true, tag=主页-我的专属歌单, desc=是否
 
 [Script]
-http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:batch|v2\/resource\/comment\/floor\/get) script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=评论区
-http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:homepage\/block\/page|link\/page\/rcmd\/(?:block\/resource\/multi\/refresh|resource\/show)) script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=推荐主页, argument=[{PRGG},{PRRK},{PRDRD},{PRSCVPT},{PRST},{PRRR},{HMPR},{PRMST},{PRCN}]
-http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/home\/framework\/tab script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=底部标签, argument=[{MY},{DT},{FX}]
-http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/page\/discovery\/resource\/show script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=发现主页
-http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/position\/show\/resource script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=我的页面
+http-response ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:batch|v2\/resource\/comment\/floor\/get) script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=评论区
+http-response ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:homepage\/block\/page|link\/page\/rcmd\/(?:block\/resource\/multi\/refresh|resource\/show)) script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=推荐主页, argument=[{PRGG},{PRRK},{PRDRD},{PRSCVPT},{PRST},{PRRR},{HMPR},{PRMST},{PRCN}]
+http-response ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/home\/framework\/tab script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=底部标签, argument=[{MY},{DT},{FX}]
+http-response ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/page\/discovery\/resource\/show script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=发现主页
+http-response ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/position\/show\/resource script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=我的页面
 
 [MitM]
 hostname = interface*.music.163.com, ipv4.music.163.com
