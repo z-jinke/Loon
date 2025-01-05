@@ -1,6 +1,6 @@
-#!#!name = 网易云音乐
-#!desc = 定义界面去广告
-#!icon = https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/png/music.png
+#!name=网易云音乐
+#!desc=定义界面去广告
+#!icon=https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/png/music.png
 
 [Rule]
 DOMAIN,httpdns.n.netease.com,REJECT
@@ -20,13 +20,18 @@ DOMAIN,ipv6.music.163.com,REJECT
 ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/w?eapi\/(?:activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|default\/|rcmd\/keyword\/|specialkeyword\/)) reject-dict
 
 [Argument]
-FX= switch, false, true, tag= 底部-发现, desc= 是否
-MY= switch, false, true, tag= 底部-漫游, desc= 是否
-DT= switch, false, true, tag= 底部-笔记, desc= 是否
-PRST= switch, false, true, tag= 主页-最近常听, desc= 是否
-PRCN= switch, false, true, tag= 主页-专属歌单, desc= 是否
-HMPR= switch, false, true, tag= 主页-合伙人, desc= 是否
-PRRK= switch, false, true, tag= 主页-排行榜, desc= 是否
+FX=switch, false, true, tag=底部-发现, desc=是否
+MY=switch, false, true, tag=底部-漫游, desc=是否
+DT=switch, false, true, tag=底部-笔记, desc=是否
+PRGG=switch, false, true, tag=主页-问候语, desc=是否
+PRRK=switch, false, true, tag=主页-排行榜, desc=是否
+PRDRD=switch, false, true, tag=主页-每日推荐, desc=是否
+PRSCVPT=switch, false, true, tag=主页-推荐歌单, desc=是否
+PRST=switch, false, true, tag=主页-最近常听, desc=是否
+PRRR=switch, false, true, tag=主页-雷达歌单, desc=是否
+HMPR=switch, false, true, tag=主页-音乐合伙人, desc=是否
+PRMST=switch, false, true, tag=主页-推荐专属歌单, desc=是否
+PRCN=switch, false, true, tag=主页-你的专属歌单, desc=是否
 
 [Script]
 http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:batch|v2\/resource\/comment\/floor\/get) script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=评论区
