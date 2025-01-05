@@ -1,17 +1,17 @@
-#!name = 哔哩哔哩
-#!desc = 精简界面去广告
-#!icon = https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/png/bilibili.png
+#!name=哔哩哔哩
+#!desc=精简界面去广告
+#!icon=https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/png/bilibili.png
 
 [Rewrite]
-^https:\/\/(api|app)\.bilibili\.com\/x\/(resource\/ip|v2/splash/show|vip\/ads|v2\/dm\/qoe\/show) - reject-dict
+^https?:\/\/(api|app)\.bilibili\.com\/x\/(resource\/ip|v2/splash/show|vip\/ads|v2\/dm\/qoe\/show) - reject-dict
 
 [Script]
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, tag=响应修改
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, tag=响应修改
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\? script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, tag=响应修改
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2 script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, tag=响应修改
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine|ipad) script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, tag=响应修改
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.(?:app\.(?:interface\.v1\.Teenagers\/ModeStatus|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite|view\.v1\.View\/(?:View|ViewProgress)|viewunite\.v1\.View\/(?:RelatesFeed|View))|main\.community\.reply\.v1\.Reply\/MainList)$ script-path = https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=响应修改
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=开屏广告
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=推荐内容
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\? script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=搜索栏
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2 script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=主页界面
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine|ipad) script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=我的页面
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.(?:app\.(?:interface\.v1\.Teenagers\/ModeStatus|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite|view\.v1\.View\/(?:View|ViewProgress)|viewunite\.v1\.View\/(?:RelatesFeed|View))|main\.community\.reply\.v1\.Reply\/MainList)$ script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, timeout=10, tag=广告处理
 
 [MITM]
 hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
