@@ -1,12 +1,12 @@
-#!name = YouTube
-#!desc = 干掉广告
-#!icon = https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/png/youtube.png
+#!name=YouTube
+#!desc=干掉广告
+#!icon=https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/png/youtube.png
 
 [Rewrite]
-^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.*oad - reject-dict
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.*oad reject-dict
 
 [Script]
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://kelee.one/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_response.js, requires-body=true, binary-body-mode=true, tag=响应修改
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://kelee.one/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_response.js, requires-body=true, binary-body-mode=true, timeout=10, tag=广告处理
 
 [MitM]
 hostname = *.googlevideo.com,youtubei.googleapis.com
