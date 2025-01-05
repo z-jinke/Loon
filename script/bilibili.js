@@ -3,7 +3,7 @@
 let url = $request.url;
 let body = $response.body;
 
-if (/^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(url)) {
+if (/x\/v2\/splash\/list/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (obj.data) {
@@ -18,7 +18,7 @@ if (/^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(url)) {
     }
 }
 
-if (/^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\?/.test(url)) {
+if (/x\/v2\/search\/square\?/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (obj.data) {
@@ -30,7 +30,7 @@ if (/^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\?/.test(url)) {
     }
 }
 
-if (/^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index/.test(url)) {
+if (/x\/v2\/feed\/index/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (obj.data) {
@@ -45,7 +45,7 @@ if (/^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index/.test(url)) {
     }
 }
 
-if (/^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2/.test(url)) {
+if (/x\/resource\/show\/tab\/v2/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (obj.data) {
@@ -74,7 +74,7 @@ if (/^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2/.test(url)) {
     }
 }
 
-if (/^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine/.test(url)) {
+if (/x\/v2\/account\/mine/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (url.includes("/ipad")) {
