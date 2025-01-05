@@ -3,7 +3,7 @@
 #!icon=https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/png/bilibili.png
 
 [Rewrite]
-^https?:\/\/(api|app)\.bilibili\.com\/x\/(resource\/ip|v2/splash/show|vip\/ads|v2\/dm\/qoe\/show) - reject-dict
+^https?:\/\/(api|app)\.bilibili\.com\/x\/(resource\/ip|v2/splash/show|vip\/ads|v2\/dm\/qoe\/show) reject-dict
 
 [Script]
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=开屏广告
