@@ -1,10 +1,10 @@
-#!name = Sub-Store
-#!desc = 订阅管理
-#!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App/Sub-Store.png
+#!name=Sub-Store
+#!desc=订阅管理
+#!icon=https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App/Sub-Store.png
 
 [Script]
-http-request ^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-1.min.js, requires-body=true, timeout=120, tag=后端
-http-request ^https?:\/\/sub\.store script-path = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-0.min.js, requires-body=true, timeout = 120, tag=前端
+http-request ^https:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path=https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-1.min.js, requires-body=true, timeout=120, tag=后端
+http-request ^https:\/\/sub\.store script-path=https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-0.min.js, requires-body=true, timeout=120, tag=前端
 
 [MitM]
 hostname = sub.store
