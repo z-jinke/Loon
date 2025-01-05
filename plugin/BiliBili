@@ -1,5 +1,5 @@
 #!name = 哔哩哔哩
-#!desc = 修改布局去广告
+#!desc = 精简界面去广告
 #!icon = https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/png/bilibili.png
 
 [Rewrite]
