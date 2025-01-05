@@ -3,7 +3,7 @@
 let url = $request.url;
 let body = $response.body;
 
-if (/^https:\/\/api\.coolapk\.com\/v6\/main\/init/.test(url)) {
+if (/v6\/main\/init/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (obj.data) {
@@ -27,7 +27,7 @@ if (/^https:\/\/api\.coolapk\.com\/v6\/main\/init/.test(url)) {
     }
 }
 
-if (/^https:\/\/api\.coolapk\.com\/v6\/main\/indexV8/.test(url)) {
+if (/v6\/main\/indexV8/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (obj.data) {
@@ -39,7 +39,7 @@ if (/^https:\/\/api\.coolapk\.com\/v6\/main\/indexV8/.test(url)) {
     }
 }
 
-if (/^https:\/\/api\.coolapk\.com\/v6\/search\?/.test(url)) {
+if (/v6\/search\?/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (obj.data) {
@@ -51,7 +51,7 @@ if (/^https:\/\/api\.coolapk\.com\/v6\/search\?/.test(url)) {
     }
 }
 
-if (/^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?id/.test(url)) {
+if (/v6\/feed\/detail\?id/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (obj.data) {
@@ -64,7 +64,7 @@ if (/^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?id/.test(url)) {
     }
 }
 
-if (/^https:\/\/api\.coolapk\.com\/v6\/page\/dataList/.test(url)) {
+if (/v6\/page\/dataList/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (obj.data) {
@@ -77,7 +77,7 @@ if (/^https:\/\/api\.coolapk\.com\/v6\/page\/dataList/.test(url)) {
     }
 }
 
-if (/^https:\/\/api\.coolapk\.com\/v6\/account\/loadConfig/.test(url)) {
+if (/v6\/account\/loadConfig/.test(url)) {
     try {
         let obj = JSON.parse(body);
         if (obj.data) {
