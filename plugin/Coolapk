@@ -5,9 +5,9 @@
 [Script]
 http-response ^https?:\/\/api\.coolapk\.com\/v6\/main\/init script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/coolapk.js, requires-body=true, timeout=10, tag=广告处理
 http-response ^https?:\/\/api\.coolapk\.com\/v6\/main\/indexV8 script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/coolapk.js, requires-body=true, timeout=10, tag=首页推荐
-http-response ^https?:\/\/api\.coolapk\.com\/v6\/search\? script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/coolapk.js, requires-body=true, timeout=10, tag=搜索蓝栏
+http-response ^https?:\/\/api\.coolapk\.com\/v6\/search\? script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/coolapk.js, requires-body=true, timeout=10, tag=搜索栏
 http-response ^https?:\/\/api\.coolapk\.com\/v6\/feed\/detail\?id script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/coolapk.js, requires-body=true, timeout=10, tag=帖子内容
-http-response ^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/coolapk.js, requires-body=true, timeout=10, tag=Tab栏内容
+http-response ^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/coolapk.js, requires-body=true, timeout=10, tag=Tab内容
 http-response ^https?:\/\/api\.coolapk\.com\/v6\/account\/loadConfig script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/coolapk.js, requires-body=true, timeout=10, tag=我的页面
 
 [MITM]
