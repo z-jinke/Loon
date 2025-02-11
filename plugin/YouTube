@@ -2,6 +2,9 @@
 #!desc=去除广告
 #!icon=https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/png/youtube.png
 
+[Rule]
+AND,((DOMAIN-KEYWORD,google),(PROTOCOL,QUIC)),REJECT
+
 [Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.*oad reject-dict
 
