@@ -1,0 +1,22 @@
+#!name=哔哩哔哩
+#!date=2025.3.11
+#!desc=全面精简
+#!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/bilibili.png
+
+[Rewrite]
+^https?:\/\/(api|app)\.bilibili\.com\/x\/(resource\/ip|v2/splash/show|vip\/ads|v2\/dm\/qoe\/show) reject-dict
+#JQ语法
+^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/list response-body-json-jq '.data.list |= map(.duration = 0 | .end_time = 999999999)'
+^https?:\/\/app\.bilibili\.com\/x\/v2\/search\/square\? response-body-json-jq '.data |= map(select(.type != "recommend"))'
+^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select(.goto == "av" and .card_goto == "av")) | .data.config.column = 1'
+^https?:\/\/api\.bilibili\.com\/pgc\/page\/cinema response-body-json-jq '.result.modules |= map(select(.module_id != 1633))'
+^https?:\/\/api\.bilibili\.com\/pgc\/page\/bangumi response-body-json-jq '.result.modules |= map(select(.module_id != 1639))'
+^https?:\/\/api\.bilibili\.com\/pgc\/page\/channel response-body-json-jq '.data.modules |= map(select(.id != 2038 and .id != 2015))'
+
+[Script]
+http-response ^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2 script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=精简首页
+http-response ^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine|ipad) script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=精简我的
+http-response ^https?:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.(?:app\.(?:interface\.v1\.Teenagers\/ModeStatus|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite|view\.v1\.View\/(?:View|ViewProgress)|viewunite\.v1\.View\/(?:RelatesFeed|View))|main\.community\.reply\.v1\.Reply\/MainList)$ script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, timeout=10, tag=广告处理
+
+[MITM]
+hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
