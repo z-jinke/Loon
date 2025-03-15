@@ -1,0 +1,10 @@
+#!name=微信小程序
+#!date=2025.3.16
+#!desc=广告拦截
+#!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/wechat(1).png
+
+[Rewrite]
+^https?:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub/? response-body-json-jq '.result.bottom_tabs |= map(select(.group != 11))' '.result.dy_module = []'
+
+[MITM]
+hostname = api.pinduoduo.com
