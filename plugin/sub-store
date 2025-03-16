@@ -1,7 +1,7 @@
 #!name=Sub-Store
 #!date=2025.3.16
 #!desc=节点管理
-#!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/sub(1).png
+#!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/sub.png
 
 [Script]
 http-request ^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path=https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-1.min.js, requires-body=true, timeout=10, tag=订阅管理后端
