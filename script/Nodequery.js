@@ -77,11 +77,11 @@ const scriptName = "入口落地查询";
         province == city && (province = "");
         country == "中国" && (country = "🇨🇳中国");
         isp = isp.replace(/.*广电.*/g, "广电");
-        ins = `<p style="font-family: -apple-system; font-size: 16px; color: #333;">
-        <b>本机国家:</b> <span style="color: #007BFF;">${country}</span> &nbsp; ${tk}ms<br><br>
-        <b>本机入口:</b> <span>${isp}</span><br><br>
-        <b>本机IP:</b> <span style="color: #007BFF;">${addr}</span><br><br>
-        <b>本机位置:</b> <span>${province} ${city}</span><br><br></p>`;
+        ins = `<p style="font-family: -apple-system; font-size: 16px; color: #FFFFFF;">
+  <b>本机国家:</b> <span style="color: #007BFF;">${country}</span> &nbsp; ${tk}ms<br><br>
+  <b>本机入口:</b> <span>${isp}</span><br><br>
+  <b>本机IP:</b> <span style="color: #007BFF;">${addr}</span><br><br>
+  <b>本机位置:</b> <span>${province} ${city}</span><br><br></p>`;
       } else {
         console.log("BIli api Failed: " + JSON.stringify(LO, "", 2));
         ins = `<br>BIli Api Failed 查询超时<br><br>`;
