@@ -26,7 +26,7 @@ const scriptName = "查询";
     const LD = await fetchJSON("http://ip-api.com/json/?lang=zh-CN", timei);
     if (LD?.status === "success") {
       outs = `<p style="font-family: -apple-system; font-size: 16px; color: #FFFFFF;">
-        <b style="font-size: 18px; color: #FFA500;">落地信息</b><br>
+        <b style="font-size: 16px; color: #FFA500;">落地信息</b><br>
         <b>国家/地区:</b> ${getFlag(LD.countryCode)} ${LD.country}<br>
         <b>省份/城市:</b> ${LD.regionName} ${LD.city}<br>
         <b>IP 地址:</b> <span style="color: #FF5733;">${LD.query}</span><br>
@@ -43,7 +43,7 @@ const scriptName = "查询";
       const LO = await fetchJSON("https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr", timein);
       if (LO?.code === 0) {
         ins = `<p style="font-family: -apple-system; font-size: 16px; color: #FFFFFF;">
-          <b style="font-size: 18px; color: #1E90FF;">入口信息</b><br>
+          <b style="font-size: 16px; color: #1E90FF;">入口信息</b><br>
           <b>国家:</b> ${LO.data.country}<br>
           <b>省份/城市:</b> ${LO.data.province} ${LO.data.city}<br>
           <b>ISP:</b> ${LO.data.isp}<br>
@@ -57,7 +57,7 @@ const scriptName = "查询";
       const SP = await fetchJSON(`https://api-v3.speedtest.cn/ip?ip=${nodeIp}`, timein);
       if (SP?.data?.country === "中国") {
         ins = `<p style="font-family: -apple-system; font-size: 16px; color: #FFFFFF;">
-          <b style="font-size: 18px; color: #1E90FF;"> 入口信息</b><br>
+          <b style="font-size: 16px; color: #1E90FF;"> 入口信息</b><br>
           <b>国家/地区:</b> ${getFlag(SP.data.countryCode)} ${SP.data.country}<br>
           <b>省份/城市:</b> ${SP.data.province} ${SP.data.city} ${SP.data.district}<br>
           <b>ISP:</b> ${SP.data.isp}<br>
@@ -69,7 +69,7 @@ const scriptName = "查询";
       }
     }
 
-    // 拼接最终消息内容，入口和落地信息分开
+    // 拼接最终消息内容
     let message = `<p style="text-align: center; font-family: -apple-system; font-size: 16px; color: #FFFFFF;">
       ${ins}
       ${outs}
