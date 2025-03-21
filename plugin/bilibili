@@ -1,7 +1,13 @@
 #!name=哔哩哔哩
-#!date=2025.3.11
+#!date=2025.3.21
 #!desc=全面精简
 #!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/bilibili.png
+
+[Rule]
+DOMAIN, api.biliapi.com, REJECT
+DOMAIN, app.biliapi.com, REJECT
+DOMAIN, api.biliapi.net, REJECT
+DOMAIN, app.biliapi.net, REJECT
 
 [Rewrite]
 ^https?:\/\/(api|app)\.bilibili\.com\/x\/(resource\/ip|v2/splash/show|vip\/ads|v2\/dm\/qoe\/show) reject-dict
