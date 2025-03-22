@@ -5,10 +5,10 @@
 
 [Rewrite]
 ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(?:batch|v\d\/resource\/comment\/floor\/get|homepage\/block\/page|link\/page\/rcmd\/(block\/resource\/multi\/refresh|resource\/show)|user\/follow\/users\/mixed\/get|link\/home\/framework\/tab|link\/position\/show\/resource|link\/page\/discovery\/resource\/show) header-replace x-aeapi false
-^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:delivery\/(batch-)?deliver|moment\/tab\/info\/|side-bar\/mini-program\/music-service\/account|yunbei\/account\/entrance\/|ios\/version|mlivestream\/entrance\/playpage\/|link\/position\/show\/strategy|link\/scene\/show\/resource|v1\/content\/exposure\/comment\/banner\/) mock-response-body data-type=text status-code=502
-^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/w?eapi\/(?:community\/friends\/fans-group\/artist\/group\/|mine\/applet\/redpoint|music\/songshare\/text\/recommend\/|resniche\/position\/play\/new\/|resniche\/tspopup\/show|resource\/comments?\/musiciansaid\/|user\/sub\/artist|activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|rcmd\/keyword\/|specialkeyword\/)|my\/podcast\/tab\/recommend) mock-response-body data-type=text status-code=502
-^https?:\/\/(?:ipv4|interface\d?)\.music\.163.com\/w?e?api\/search\/default mock-response-body data-type=text status-code=502
-^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(ocpc\/)?ad\/ mock-response-body data-type=text status-code=502
+^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:delivery\/(batch-)?deliver|moment\/tab\/info\/|side-bar\/mini-program\/music-service\/account|yunbei\/account\/entrance\/|ios\/version|mlivestream\/entrance\/playpage\/|link\/position\/show\/strategy|link\/scene\/show\/resource|v1\/content\/exposure\/comment\/banner\/) mock-response-body data-type=json status-code=200
+^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/w?eapi\/(?:community\/friends\/fans-group\/artist\/group\/|mine\/applet\/redpoint|music\/songshare\/text\/recommend\/|resniche\/position\/play\/new\/|resniche\/tspopup\/show|resource\/comments?\/musiciansaid\/|user\/sub\/artist|activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|rcmd\/keyword\/|specialkeyword\/)|my\/podcast\/tab\/recommend) mock-response-body data-type=json status-code=200
+^https?:\/\/(?:ipv4|interface\d?)\.music\.163.com\/w?e?api\/search\/default mock-response-body data-type=json status-code=200
+^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(ocpc\/)?ad\/ mock-response-body data-type=json status-code=200
 
 [Argument]
 PRRK=switch, false, true, tag=隐藏-音乐排行榜, desc=是否
