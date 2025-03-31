@@ -4,16 +4,13 @@
 #!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/wyy.png
 
 [Argument]
-MY = switch, false, true, tag = 底部-漫游, desc = 隐藏底部漫游标签
-DT = switch, false, true, tag = 底部-笔记, desc = 隐藏底部笔记标签
 PRGG = switch, false, true, tag = 首页-问候语, desc = 隐藏首页问候语
 PRRK = switch, false, true, tag = 首页-排行榜, desc = 隐藏首页排行榜
 PRSCVPT = switch, false, true, tag = 首页-推荐歌单, desc = 隐藏首页推荐歌单
 PRST = switch, false, true, tag = 首页-最近常听, desc = 隐藏首页最近常听
 PRRR = switch, false, true, tag = 首页-雷达歌单, desc = 隐藏首页雷达歌单
-HMPR = switch, false, true, tag = 首页-音乐合伙人, desc = 隐藏首页音乐合伙人
-PRMST = switch, false, true, tag = 首页-推荐专属歌单, desc = 隐藏首页专属歌单
-PRCN = switch, false, true, tag = 首页-你的专属歌单, desc = 隐藏首页你的专属歌单
+MY = switch, false, true, tag = 底部-漫游, desc = 隐藏底部漫游标签
+DT = switch, false, true, tag = 底部-笔记, desc = 隐藏底部笔记标签
 
 [Rewrite]
 ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(?:batch|v\d\/resource\/comment\/floor\/get|homepage\/block\/page|link\/page\/rcmd\/(block\/resource\/multi\/refresh|resource\/show)|user\/follow\/users\/mixed\/get|link\/home\/framework\/tab|link\/position\/show\/resource|link\/page\/discovery\/resource\/show) header-replace x-aeapi false
