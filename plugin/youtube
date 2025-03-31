@@ -1,5 +1,5 @@
 #!name=YouTube
-#!date=2025.3.25
+#!date=2025.3.31
 #!desc=拦截广告
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
 
@@ -7,10 +7,15 @@
 AND,((PROTOCOL,QUIC),(DOMAIN-KEYWORD,google)),REJECT
 
 [Rewrite]
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=json status-code=200
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=text status-code=502
+
+[Argument]
+blockUpload = switch, true, false, tag = 隐藏-主页上传, desc = 用于YouTube底栏的上传按钮
+blockShorts = switch, true, false, tag = 隐藏-Shorts, desc = 用于YouTube底栏的Shorts按钮
+captionLang = select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag = 字幕翻译语言, desc = 选择翻译为何种语言字幕
 
 [Script]
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://kelee.one/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_response.js, requires-body=true, binary-body-mode=true, timeout=10, tag=广告处理
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js, requires-body=true, binary-body-mode=true, timeout=20, tag=修改处理, argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}]
 
 [MitM]
-hostname = *.googlevideo.com,youtubei.googleapis.com
+hostname = *.googlevideo.com, youtubei.googleapis.com
