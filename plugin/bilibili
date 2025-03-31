@@ -1,10 +1,7 @@
 #!name=哔哩哔哩
-#!date=2025.3.25
+#!date=2025.3.31
 #!desc=全面精简
 #!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/bilibili.png
-
-[Rule]
-OR,((DOMAIN,app.biliapi.net),(DOMAIN,api.biliapi.net),(DOMAIN,app.biliapi.com),(DOMAIN,api.biliapi.com)),REJECT
 
 [Rewrite]
 ^https?:\/\/(api|app)\.bilibili\.com\/x\/(resource\/ip|v2/splash/show|vip\/ads|v2\/dm\/qoe\/show) reject-200
@@ -16,8 +13,8 @@ OR,((DOMAIN,app.biliapi.net),(DOMAIN,api.biliapi.net),(DOMAIN,app.biliapi.com),(
 ^https?:\/\/api\.bilibili\.com\/pgc\/page\/channel response-body-json-jq '.data.modules |= map(select(.id != 2038 and .id != 2015))'
 
 [Script]
-http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2 script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=精简首页
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine|ipad) script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=精简我的
+http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2 script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=简化首页
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine|ipad) script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/bilibili.js, requires-body=true, timeout=10, tag=简化我的
 http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/(?:bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus|bilibili\.app\.show\.v1\.Popular\/Index|bilibili\.app\.playurl\.v1\.PlayURL\/PlayView|bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite|bilibili\.app\.view\.v1\.View\/(?:View|ViewProgress|TFInfo)|bilibili\.app\.viewunite\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|bilibili\.community\.service\.dm\.v1\.DM\/(?:DmView|DmSegMobile)|bilibili\.main\.community\.reply\.v1\.Reply\/MainList|bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView|bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll)$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body =true, binary-body-mode =true, timeout=10, tag=广告屏蔽
 
 [MITM]
