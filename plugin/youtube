@@ -4,12 +4,9 @@
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
 
 [Argument]
+captionLang = select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag = 字幕-语言, desc = 选择翻译为何种语言字幕
 blockUpload = switch, true, false, tag = 隐藏-上传, desc = 用于YouTube底栏的上传按钮
 blockShorts = switch, true, false, tag = 隐藏-Shorts, desc = 用于YouTube底栏的Shorts按钮
-captionLang = select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag = 字幕-语言, desc = 选择翻译为何种语言字幕
-
-[Rule]
-AND,((PROTOCOL,QUIC),(DOMAIN-KEYWORD,google)),REJECT
 
 [Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
