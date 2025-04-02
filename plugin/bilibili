@@ -1,6 +1,6 @@
 #!name=哔哩哔哩
-#!date=2025.3.31
-#!desc=全面精简
+#!date=2025.4.2
+#!desc=简化+广告屏蔽
 #!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/bilibili.png
 
 [Rewrite]
