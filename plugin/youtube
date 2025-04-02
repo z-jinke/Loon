@@ -1,6 +1,6 @@
 #!name=YouTube
-#!date=2025.3.31
-#!desc=拦截广告
+#!date=2025.4.2
+#!desc=自定义+广告屏蔽
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
 
 [Argument]
