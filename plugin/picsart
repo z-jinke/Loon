@@ -1,0 +1,10 @@
+#!name=PicsArt
+#!date=2025.4.8
+#!desc=解锁订阅
+#!icon=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6MwP_2omSuF6Yc9mWl3BginbTY1l3_bUCz0q5UfexMg&s
+
+[Script]
+http-response ^https:\/\/api\.aidimension\.cn\/shop\/subscription\/apple\/purchases script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/script/picsart.js, requires-body=true, timeout=10, tag=解锁订阅
+
+[MITM]
+hostname = api.aidimension.cn
