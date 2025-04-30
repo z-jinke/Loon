@@ -1,7 +1,7 @@
 #!name=Spotify音乐
 #!date=2025.4.30
 #!desc=解锁会员
-#!icon=https://img.icons8.com/?size=100&id=FwwoyZ9kCHZp&format=png&color=000000
+#!icon=https://images.icon-icons.com/2108/PNG/512/spotify_icon_130826.png
 
 [Rewrite]
 ^https:\/\/spclient\.wg\.spotify\.com\/user-customization-service\/v1\/customize$ header-replace if-none-match *
