@@ -1,7 +1,7 @@
 #!name=哔哩哔哩
 #!date=2025.4.30
 #!desc=广告屏蔽
-#!icon=https://s1.aigei.com/src/img/png/78/788f5d77c67d49848063eb058f4694a5.png?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&e=2051020800&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:p6dNPIrWJIkNfpBB0h1yRBIEPcM=
+#!icon=https://lh6.googleusercontent.com/proxy/3PczFthU-rRZbqrzgR_q4dKnz2gmz5XLF5WeHCVhywApEezYMAlibZunMQVWRcExiJudG1sUmb5OoE7a7DRyt5mDO8sgKp4Z_hGx
 
 [Rewrite]
 ^https:\/\/(api|app)\.bilibili\.com\/x\/(resource\/ip|v2/splash/show|vip\/ads|v2\/dm\/qoe\/show) reject-200
