@@ -3,6 +3,9 @@
 #!desc=解锁订阅
 #!icon=https://i.pinimg.com/474x/d1/00/9f/d1009f9fbe8bc537c38fc059017e667d.jpg
 
+[Rewrite]
+^https:\/\/api\.aidimension\.cn\/shop\/subscription\/apple\/purchases header-del idfv segments
+
 [Script]
 http-response ^https:\/\/api\.aidimension\.cn\/shop\/subscription\/apple\/purchases script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/picsart.js, requires-body=true, timeout=10, tag=解锁订阅
 
