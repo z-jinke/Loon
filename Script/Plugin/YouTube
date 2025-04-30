@@ -1,0 +1,17 @@
+#!name=YouTube
+#!date=2025.4.30
+#!desc=广告屏蔽
+#!icon=https://img.icons8.com/?size=100&id=lK0UIyWkLIOI&format=png&color=000000
+
+[Argument]
+blockUpload = switch, true, false, tag = 隐藏-上传, desc = 用于YouTube底栏的上传按钮
+blockShorts = switch, true, false, tag = 隐藏-Shorts, desc = 用于YouTube底栏的Shorts按钮
+
+[Rewrite]
+^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=text status-code=502
+
+[Script]
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js, requires-body=true, binary-body-mode=true, timeout=10, tag=修改屏蔽, argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}]
+
+[MitM]
+hostname = *.googlevideo.com,youtubei.googleapis.com
