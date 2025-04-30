@@ -1,7 +1,7 @@
 #!name=YouTube
 #!date=2025.4.30
 #!desc=修改屏蔽
-#!icon=https://img.icons8.com/?size=100&id=lK0UIyWkLIOI&format=png&color=000000
+#!icon=https://images.icon-icons.com/1211/PNG/512/1491579609-yumminkysocialmedia08_83079.png
 
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=text status-code=502
