@@ -1,7 +1,7 @@
 #!name=YouTube(Music)
 #!desc=自定义屏蔽并拦截广告
 #!author=Jinke,Maasea
-#!icon=https://images.icon-icons.com/1211/PNG/512/1491579609-yumminkysocialmedia08_83079.png
+#!icon=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtbBYovB7sE4Oqo2oxrcJSQZgB9l3cLTOnPA&s
 
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=text status-code=502
