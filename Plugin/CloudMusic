@@ -1,6 +1,6 @@
 #!name=网易云音乐
-#!date=2025.4.30
-#!desc=广告屏蔽
+#!date=2025.5.1
+#!author=Jinke,Keywos
 #!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/wyy.png
 
 [Rewrite]
