@@ -1,0 +1,26 @@
+{
+  "name":"图标", "icons":
+  [
+    {"name":"Loon", "url":"https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/Loon.png"},
+    {"name":"Proxy", "url":"https://images.icon-icons.com/3571/PNG/512/arrows_forward_right_next_icon_225565.png"},
+    {"name":"fuzai", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Round_Robin.png"},
+    {"name":"Auto", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"},
+    {"name":"HongKong", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"},
+    {"name":"Japan", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"},
+    {"name":"Singapore", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"},
+    {"name":"UnitedStates", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"},
+    {"name":"youxi", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png"},
+    {"name":"YouTubeMusic", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube_Music.png"},
+    {"name":"YouTube", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"},
+    {"name":"Telegram", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"},
+    {"name":"ChatGPT", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png"},
+    {"name":"Spotify", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png"},
+    {"name":"IcloudMusic", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png"},
+    {"name":"Google", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png"},
+    {"name":"bilibili", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png"},
+    {"name":"Emby", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png"},
+    {"name":"Twitter", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png"},
+    {"name":"WeChat", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/WeChat.png"},
+    {"name":"Weibo", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Weibo.png"},
+  ]
+}
