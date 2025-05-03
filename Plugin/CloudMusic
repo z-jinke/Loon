@@ -1,5 +1,5 @@
 #!name=网易云音乐
-#!desc=自定义首页内容屏蔽各处广告
+#!desc=自定义推荐内容屏蔽广告
 #!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/wyy.png
 
 [Rewrite]
