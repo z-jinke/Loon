@@ -4,15 +4,13 @@
 #!icon=https://raw.githubusercontent.com/lige47/QuanX-icon-rule/main/icon/wyy.png
 
 [Rewrite]
-^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(ocpc\/)?ad\/ mock-response-body data-type=text
-^https:\/\/(?:ipv4|interface\d?)\.music\.163.com\/w?e?api\/search\/default mock-response-body data-type=text
+^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/(?:e?api\/(?:ocpc\/)?ad\/|w?e?api\/search\/default) reject-200
 ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:delivery\/(batch-)?deliver|moment\/tab\/info\/|side-bar\/mini-program\/music-service\/account|yunbei\/account\/entrance\/) reject-200
 ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:community\/friends\/fans-group\/artist\/group\/|mine\/applet\/redpoint|music\/songshare\/text\/recommend\/|resniche\/position\/play\/new\/|resniche\/tspopup\/show|resource\/comments?\/musiciansaid\/|user\/sub\/artist) reject-200
 ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:ios\/version|mlivestream\/entrance\/playpage\/|link\/position\/show\/strategy|link\/scene\/show\/resource|v1\/content\/exposure\/comment\/banner\/) reject-200
 ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/w?eapi\/(?:activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|rcmd\/keyword\/|specialkeyword\/)) reject-200
 
 [Argument]
-HMPR=switch, false, true, tag=隐藏-音乐合伙人, desc=开关
 PRSCVPT=switch, false, true, tag=隐藏-推荐歌单, desc=开关
 PRST=switch, false, true, tag=隐藏-最近常听, desc=开关
 PRRK=switch, false, true, tag=隐藏-排行榜单, desc=开关
