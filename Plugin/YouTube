@@ -1,6 +1,6 @@
 #!name=YouTube(Music)
 #!desc=自定义屏蔽并拦截广告
-#!icon=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtbBYovB7sE4Oqo2oxrcJSQZgB9l3cLTOnPA&s
+#!icon=https://cdn-icons-png.freepik.com/256/255/255337.png?semt=ais_hybrid
 
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=text status-code=502
