@@ -1,4 +1,4 @@
-#!name=YouTube(Music)
+#!name=YouTube
 #!desc=自定义屏蔽并拦截广告
 #!icon=https://cdn-icons-png.freepik.com/256/255/255337.png?semt=ais_hybrid
 
@@ -8,9 +8,7 @@
 [Argument]
 blockShorts=switch, true, false, tag=隐藏-Shorts, desc=开关
 blockUpload=switch, true, false, tag=隐藏-上传功能, desc=开关
-blockImmersive=switch, true, false, tag=隐藏-选段功能, desc=开关
 captionLang=select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag=字幕-选择翻译, desc=开关
-lyricLang=select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag=歌词-选择翻译, desc=开关
 
 [Script]
 http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js, requires-body=true, binary-body-mode=true, tag =处理响应, argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}]
