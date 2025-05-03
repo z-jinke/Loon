@@ -12,12 +12,11 @@
 ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/w?eapi\/(?:activity\/bonus\/playpage\/time\/query|resource-exposure\/|search\/(?:chart\/|rcmd\/keyword\/|specialkeyword\/)) reject-200
 
 [Argument]
-PRMST=switch, false, true, tag=隐藏-推荐专属歌单, desc=开关
-PRCN=switch, false, true, tag=隐藏—你的专属歌单, desc=开关
-PRRK=switch, false, true, tag=隐藏-排行榜, desc=开关
 HMPR=switch, false, true, tag=隐藏-音乐合伙人, desc=开关
 PRSCVPT=switch, false, true, tag=隐藏-推荐歌单, desc=开关
 PRST=switch, false, true, tag=隐藏-最近常听, desc=开关
+PRRK=switch, false, true, tag=隐藏-排行榜单, desc=开关
+PRMST=switch, false, true, tag=隐藏-专属歌单, desc=开关
 
 [Script]
 http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(link\/(position\/show|page\/discovery\/resource\/show)|(batch|v2\/resource\/comment\/floor\/get)) script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, requires-body=true, binary-body-mode=true, timeout=10, tag=广告屏蔽
