@@ -2,10 +2,6 @@
 #!desc=优化界面布局并拦截广告
 #!icon=https://lh6.googleusercontent.com/proxy/3PczFthU-rRZbqrzgR_q4dKnz2gmz5XLF5WeHCVhywApEezYMAlibZunMQVWRcExiJudG1sUmb5OoE7a7DRyt5mDO8sgKp4Z_hGx
 
-[Rule]
-URL-REGEX, "^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH", REJECT-200
-URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-200
-
 [Rewrite]
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads reject-200
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(list|show|event\/list2) response-body-json-jq '.data |= del(.show, .event_list, .list)'
