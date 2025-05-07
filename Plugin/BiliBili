@@ -8,7 +8,7 @@ hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
 [Rewrite]
 ^https:\/\/api\.bilibili\.com\/pgc\/page\/cinema response-body-json-jq '.result.modules |= map(select(.module_id != 1633))'
 ^https:\/\/api\.bilibili\.com\/pgc\/page\/bangumi response-body-json-jq '.result.modules |= map(select(.module_id != 1639))'
-^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select(.type == "av" and .goto == "av" and .card_goto == "av"))'
+^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select((has("banner_item") | not) and (has("ad_info") | not) and .goto == "av" and .card_goto == "av"))'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash response-body-json-jq '.data |= del(.show, .event_list, .list)'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/ response-body-json-jq '.data |= map(select(.type != "recommend"))'
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads reject-200
