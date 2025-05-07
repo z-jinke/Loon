@@ -2,17 +2,17 @@
 #!desc=优化界面布局并拦截广告
 #!icon=https://lh6.googleusercontent.com/proxy/3PczFthU-rRZbqrzgR_q4dKnz2gmz5XLF5WeHCVhywApEezYMAlibZunMQVWRcExiJudG1sUmb5OoE7a7DRyt5mDO8sgKp4Z_hGx
 
+[MITM]
+hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
+
 [Rewrite]
-^https:\/\/api\.bilibili\.com\/x\/vip\/ads reject-200
-^https:\/\/app\.bilibili\.com\/x\/v2\/splash response-body-json-jq '.data |= del(.show, .event_list, .list)'
-^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square response-body-json-jq '.data |= map(select(.type != "recommend"))'
-^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select(.goto == "av" and .card_goto == "av"))'
 ^https:\/\/api\.bilibili\.com\/pgc\/page\/cinema response-body-json-jq '.result.modules |= map(select(.module_id != 1633))'
 ^https:\/\/api\.bilibili\.com\/pgc\/page\/bangumi response-body-json-jq '.result.modules |= map(select(.module_id != 1639))'
-^https:\/\/api\.bilibili\.com\/pgc\/page\/channel response-body-json-jq '.data.modules |= map(select(.id != 2038 and .id != 2015))'
+^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select(.type == "av" and .goto == "av" and .card_goto == "av"))'
+^https:\/\/app\.bilibili\.com\/x\/v2\/splash response-body-json-jq '.data |= del(.show, .event_list, .list)'
+^https:\/\/app\.bilibili\.com\/x\/v2\/search\/ response-body-json-jq '.data |= map(select(.type != "recommend"))'
+^https:\/\/api\.bilibili\.com\/x\/vip\/ads reject-200
+
 [Script]
 http-response ^https:\/\/app\.bilibili\.com\/x\/(resource\/show\/tab\/v2|v2\/account\/(mine|ipad)) script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/bilibili.js, requires-body=true, tag=界面修改
 http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.(?:app\.dynamic\.v2\.Dynamic\/DynAll|app\.interface\.v1\.Teenagers\/ModeStatus|app\.show\.v1\.Popular\/Index|app\.playurl\.v1\.PlayURL\/PlayView|app\.playerunite\.v1\.Player\/PlayViewUnite|app\.view\.v1\.View\/(?:View|ViewProgress|TFInfo)|app\.viewunite\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|community\.service\.dm\.v1\.DM\/(?:DmView|DmSegMobile)|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView|polymer\.app\.search\.v1\.Search\/SearchAll)$ script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=广告屏蔽
-
-[MITM]
-hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
