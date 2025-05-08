@@ -1,4 +1,4 @@
-// 更新于 2025.4.4
+// 更新于 2025.5.8
 
 let url = $request.url;
 let body = $response.body;
@@ -46,6 +46,7 @@ try {
             if (obj.data) {
                 delete obj.data.vip_section_v2;
                 delete obj.data.vip_section;
+                delete obj.modular_vip_section;
                 obj.data.sections_v2 = [
                     {
                         "items":[
