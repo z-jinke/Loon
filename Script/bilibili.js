@@ -46,7 +46,8 @@ try {
             if (obj.data) {
                 delete obj.data.vip_section_v2;
                 delete obj.data.vip_section;
-                delete obj.modular_vip_section;
+                delete obj.data.modular_vip_section;
+                delete obj.data.rework_v1;
                 obj.data.sections_v2 = [
                     {
                         "items":[
