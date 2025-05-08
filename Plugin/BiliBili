@@ -9,9 +9,9 @@ hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
 ^https:\/\/api\.bilibili\.com\/pgc\/page\/cinema response-body-json-jq '.result.modules |= map(select(.module_id != 1633))'
 ^https:\/\/api\.bilibili\.com\/pgc\/page\/bangumi response-body-json-jq '.result.modules |= map(select(.module_id != 1639))'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select((has("banner_item") | not) and (has("ad_info") | not) and .goto == "av" and .card_goto == "av"))'
-^https:\/\/app\.bilibili\.com\/x\/v2\/splash response-body-json-jq '.data |= del(.show, .event_list, .list)'
+^https:\/\/app\.bilibili\.com\/x\/v2\/splash response-body-json-jq '.data |= {min_interval: 999999, pull_interval: 999999}'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/search\/ response-body-json-jq '.data |= map(select(.type != "recommend"))'
-^https:\/\/(api\.bilibili\.com|app\.bilibili\.com)\/x(\/vip\/ads|v2\/splash\/show) reject-200
+^https:\/\/api\.bilibili\.com\/x\/vip\/ads reject-200
 
 [Script]
 http-response ^https:\/\/app\.bilibili\.com\/x\/(resource\/show\/tab\/v2|v2\/account\/(mine|ipad)) script-path=https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/bilibili.js, requires-body=true, tag=界面修改
