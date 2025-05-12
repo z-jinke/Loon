@@ -1,10 +1,10 @@
 #!name=Sub-Store
-#!desc=高级订阅管理工具
+#!desc=订阅管理工具
 #!icon=https://raw.githubusercontent.com/58xinian/icon/master/Sub-Store1.png
 
 [Script]
-http-request ^https:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path=https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-1.min.js, requires-body=true, timeout=30, tag=Core
-http-request ^https:\/\/sub\.store script-path=https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-0.min.js, requires-body=true, timeout=30, tag=Simple
+http-request ^https:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-1.min.js, requires-body=true, tag=后端处理
+http-request ^https:\/\/sub\.store script-path = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-0.min.js, requires-body=true, tag=前端处理
 
 [MITM]
 hostname = sub.store
