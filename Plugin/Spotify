@@ -1,5 +1,5 @@
 #!name=Spotify音乐
-#!desc=解锁部分会员权限
+#!desc=解锁订阅权限
 #!icon=https://images.icon-icons.com/2108/PNG/512/spotify_icon_130826.png
 
 [Mitm]
@@ -9,4 +9,4 @@ hostname = spclient.wg.spotify.com
 ^https:\/\/spclient\.wg\.spotify\.com\/user-customization-service\/v1\/customize$ header-replace if-none-match *
 
 [Script]
-http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, tag=解锁权限
+http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path = https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, tag=解锁处理
