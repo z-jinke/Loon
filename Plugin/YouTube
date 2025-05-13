@@ -9,9 +9,9 @@ hostname = *.googlevideo.com,youtubei.googleapis.com
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
 
 [Argument]
-blockShorts=switch, true, false, tag=隐藏-Shorts, desc=开关
-blockUpload=switch, true, false, tag=隐藏-上传功能, desc=开关
-captionLang=select, "zh-Hans", "zh-Hant", tag=字幕-选择翻译, desc=开关
+blockShorts=switch, false, true, tag=隐藏-Shorts
+blockUpload=switch, false, true, tag=隐藏-上传功能
+captionLang=select, "zh-Hans", "zh-Hant", tag=字幕-选择翻译
 
 [Script]
 http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js, requires-body=true, binary-body-mode=true, tag=处理响应, argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}]
