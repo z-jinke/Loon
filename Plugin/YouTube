@@ -7,9 +7,6 @@ blockShorts=switch, false, true, tag=隐藏-Shorts
 blockUpload=switch, false, true, tag=隐藏-上传功能
 captionLang=select, "zh-Hans", "zh-Hant", tag=字幕-选择翻译
 
-[Rule]
-AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,googlevideo.com)),REJECT
-
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
 ^https:\/\/(www|s)\.youtube\.com\/api\/stats\/ads reject-200
