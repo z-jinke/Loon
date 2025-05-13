@@ -150,4 +150,3 @@ DOMAIN-SUFFIX,google.com.ua
 DOMAIN-SUFFIX,google.com.uy
 DOMAIN-SUFFIX,google.com.vc
 DOMAIN-SUFFIX,google.com.vn
-AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,googlevideo.com)),REJECT
