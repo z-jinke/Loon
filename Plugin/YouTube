@@ -5,6 +5,9 @@
 [MitM]
 hostname = *.googlevideo.com,youtubei.googleapis.com
 
+[Rule]
+AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,googlevideo.com)),REJECT
+
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
 
