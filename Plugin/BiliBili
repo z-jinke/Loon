@@ -8,7 +8,7 @@ hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
 [Rewrite]
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads response-body-json-jq '.data = {}'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select(.goto == "av" and .card_goto == "av"))'
-^https:\/\/app\.bilibili\.com\/x\/v2\/splash response-body-json-jq '.data.min_interval=999999 | .data.pull_interval=999999 | .data.list=[] | .data.show=[]'
+^https:\/\/app\.bilibili\.com\/x\/v2\/splash response-body-json-jq '.data.max_time=0 | .data.list=[] | .data.show=[]'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/search response-body-json-jq '.data |= map(select(.type != "recommend"))'
 
 [Script]
