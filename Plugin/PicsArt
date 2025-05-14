@@ -5,8 +5,5 @@
 [MITM]
 hostname = api.aidimension.cn
 
-[Rewrite]
-^https:\/\/api\.aidimension\.cn\/shop\/subscription\/apple\/purchases header-del idfv segments
-
 [Script]
 http-response ^https:\/\/api\.aidimension\.cn\/shop\/subscription\/apple\/purchases script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/picsart.js, requires-body=true, tag=解锁处理
