@@ -1,6 +1,6 @@
-#!name=Sub-Store
-#!desc=订阅管理工具
-#!icon=https://raw.githubusercontent.com/58xinian/icon/master/Sub-Store1.png
+#!name = Sub-Store
+#!desc = 订阅管理工具
+#!icon = https://raw.githubusercontent.com/58xinian/icon/master/Sub-Store1.png
 
 [MITM]
 hostname = sub.store
