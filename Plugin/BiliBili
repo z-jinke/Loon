@@ -1,6 +1,6 @@
-#!name=哔哩哔哩
-#!desc=拦截广告
-#!icon=https://lh6.googleusercontent.com/proxy/3PczFthU-rRZbqrzgR_q4dKnz2gmz5XLF5WeHCVhywApEezYMAlibZunMQVWRcExiJudG1sUmb5OoE7a7DRyt5mDO8sgKp4Z_hGx
+#!name = 哔哩哔哩
+#!desc = 拦截广告
+#!icon = https://lh6.googleusercontent.com/proxy/3PczFthU-rRZbqrzgR_q4dKnz2gmz5XLF5WeHCVhywApEezYMAlibZunMQVWRcExiJudG1sUmb5OoE7a7DRyt5mDO8sgKp4Z_hGx
 
 [MITM]
 hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
