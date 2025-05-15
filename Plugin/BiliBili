@@ -5,7 +5,7 @@
 [MITM]
 hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
 
-[Arguments]
+[Argument]
 showTabRecommend = switch, true, false, tag=隐藏-推荐
 showTabHot = switch, true, false, tag=隐藏-热门
 showTabBangumi = switch, true, false, tag=隐藏-动画
