@@ -5,6 +5,13 @@
 [MITM]
 hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
 
+[Arguments]
+showTabRecommend = switch, true, false, tag=隐藏-推荐
+showTabHot = switch, true, false, tag=隐藏-热门
+showTabBangumi = switch, true, false, tag=隐藏-动画
+showTabCinema = switch, true, false, tag=隐藏-影视
+showTabLive = switch, true, false, tag=隐藏-直播
+
 [Rewrite]
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads response-body-json-jq '.data = {}'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash response-body-json-jq '.data.show = [] | .data.event_list = []'
