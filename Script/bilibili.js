@@ -60,64 +60,18 @@ try {
 
             obj.data.tab = tabList;
 
-            // 保留底部栏
             obj.data.bottom = [
-                {
-                    "id": 43,
-                    "name": "主页",
-                    "uri": "bilibili://main/home/",
-                    "tab_id": "home",
-                    "icon": "http://i0.hdslb.com/bfs/archive/1ab5459ccb18c7a996315327257375be3da19886.png",
-                    "icon_selected": "http://i0.hdslb.com/bfs/archive/d6a45f06684562dd9cb6914007658c0cdb17bbff.png",
-                    "pos": 1
-                },
-                {
-                    "id": 45,
-                    "name": "动态",
-                    "uri": "bilibili://following/home/",
-                    "tab_id": "dynamic",
-                    "icon": "http://i0.hdslb.com/bfs/archive/0f15d5f5be25af29eec6f002561d5000a77cc914.png",
-                    "icon_selected": "http://i0.hdslb.com/bfs/archive/1d37925562cd3e7d2e5f0868f966b5b9a8b86cde.png",
-                    "pos": 3
-                },
-                {
-                    "id": 49,
-                    "name": "我的",
-                    "uri": "bilibili://user_center/",
-                    "tab_id": "我的Bottom",
-                    "icon": "http://i0.hdslb.com/bfs/archive/aafe71f10eeb5086ac119e4dad769c5aad4d86a2.png",
-                    "icon_selected": "http://i0.hdslb.com/bfs/archive/36e080bbd8ae858af664ef251741124e04241942.png",
-                    "pos": 5
-                }
-            ];
+                {"id":43,"name":"主页","uri":"bilibili://main/home/","tab_id":"home","icon":"http://i0.hdslb.com/bfs/archive/1ab5459ccb18c7a996315327257375be3da19886.png","icon_selected":"http://i0.hdslb.com/bfs/archive/d6a45f06684562dd9cb6914007658c0cdb17bbff.png","pos":1},{"id":45,"name":"动态","uri":"bilibili://following/home/","tab_id":"dynamic","icon":"http://i0.hdslb.com/bfs/archive/0f15d5f5be25af29eec6f002561d5000a77cc914.png","icon_selected":"http://i0.hdslb.com/bfs/archive/1d37925562cd3e7d2e5f0868f966b5b9a8b86cde.png","pos":3},{"id":49,"name":"我的","uri":"bilibili://user_center/","tab_id":"我的Bottom","icon":"http://i0.hdslb.com/bfs/archive/aafe71f10eeb5086ac119e4dad769c5aad4d86a2.png","icon_selected":"http://i0.hdslb.com/bfs/archive/36e080bbd8ae858af664ef251741124e04241942.png","pos":5}];
 
-            // 顶部栏（消息）
             obj.data.top = [
-                {
-                    "id": 176,
-                    "icon": "http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png",
-                    "tab_id": "消息Top",
-                    "name": "消息",
-                    "uri": "bilibili://link/im_home",
-                    "pos": 2
-                }
-            ];
+                {"id":176,"icon":"http://i0.hdslb.com/bfs/archive/d43047538e72c9ed8fd8e4e34415fbe3a4f632cb.png","tab_id":"消息Top","name":"消息","uri":"bilibili://link/im_home","pos":2}];
 
-            // 更多分区
             obj.data.top_more = [
-                {
-                    "id": 3194,
-                    "icon": "https://i0.hdslb.com/bfs/legacy/97ee284bf3565ddbc84bd776e11885700216a35d.png",
-                    "name": "更多分区",
-                    "uri": "bilibili://main/top_category",
-                    "pos": 1
-                }
-            ];
+                {"id":3194,"icon":"https://i0.hdslb.com/bfs/legacy/97ee284bf3565ddbc84bd776e11885700216a35d.png","name":"更多分区","uri":"bilibili://main/top_category","pos":1}];
         }
         body = JSON.stringify(obj);
     }
 
-    // 我的页面修改
     if (/x\/v2\/account\/mine/.test(url)) {
         let obj = JSON.parse(body);
         if (url.includes("/ipad")) {
