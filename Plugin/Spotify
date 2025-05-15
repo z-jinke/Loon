@@ -1,0 +1,12 @@
+#!name = Spotify
+#!desc = 解锁订阅
+#!icon = https://static-00.iconduck.com/assets.00/spotify-icon-1024x1024-7zm2z9zz.png
+
+[Mitm]
+hostname = spclient.wg.spotify.com
+
+[Rewrite]
+^https:\/\/spclient\.wg\.spotify\.com\/user-customization-service\/v1\/customize$ header-del if-none-match
+
+[Script]
+http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path = https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, tag=解锁处理
