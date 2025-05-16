@@ -5,14 +5,6 @@
 [MITM]
 hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
 
-[Argument]
-showUpList = select, "TUER", "FALSE", tag = 动态-最常访问
-
-[Rule]
-AND,((DOMAIN,app.biliapi.net),(DOMAIN,api.biliapi.net),(DOMAIN,app.biliapi.com),(DOMAIN,api.biliapi.com),(DOMAIN,api.biliapi.com)), REJECT
-URL-REGEX, "^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH", REJECT-DICT
-URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-DICT
-
 [Rewrite]
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads response-body-json-jq '.data = {}'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash response-body-json-jq '.data.show = [] | .data.event_list = []'
@@ -22,6 +14,5 @@ URL-REGEX, "^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH", REJECT-DICT
 
 [Script]
 http-response ^https:\/\/app\.bilibili\.com\/x\/(resource\/show\/tab\/v2|v2\/account\/(mine|ipad)) script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/bilibili.js, requires-body=true, tag=界面处理
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=修改处理, argument=[{showUpList}]
 http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=弹窗处理
 http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/(?:bilibili\.app\.show\.v1\.Popular\/Index|bilibili\.app\.playurl\.v1\.PlayURL\/PlayView|bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite|bilibili\.app\.view\.v1\.View\/(?:View|ViewProgress|TFInfo)|bilibili\.app\.viewunite\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|bilibili\.community\.service\.dm\.v1\.DM\/(?:DmView|DmSegMobile)|bilibili\.main\.community\.reply\.v1\.Reply\/MainList|bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView|bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll|bilibili\.app\.interface\.v1\.Search\/DefaultWords)$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=广告处理
