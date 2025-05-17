@@ -1,8 +1,3 @@
-# DOMAIN
-# DOMAIN-SUFFIX
-# IP-ASN
-# IP-CIDR
-
 DOMAIN,api.imem.app
 DOMAIN,api.swiftgram.app
 DOMAIN-SUFFIX,cdn-telegram.org
