@@ -1,17 +1,17 @@
 #!name = Youtube
-#!desc = 拦截广告
+#!desc = 修改处理
 #!icon = https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/YouTube_play_button_square_%282013-2017%29.svg/2048px-YouTube_play_button_square_%282013-2017%29.svg.png
 
 [MitM]
 hostname = *.googlevideo.com, youtubei.googleapis.com
 
 [Argument]
-blockUpload = switch, true, false, tag = 上传按钮
-blockShorts = switch, true, false, tag = Shorts
-captionLang = select, "zh-Hans", "OFF", tag = 字幕翻译语言
+blockUpload = switch, true, false, tag = 上传功能
+blockShorts = switch, true, false, tag = 短视频区
+captionLang = select, "zh-Hans", "OFF", tag = 字幕语言
 
 [Rewrite]
-^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
+^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-video
 
 [Script]
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js, requires-body=true, binary-body-mode=true, tag=响应处理, argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}]
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js, requires-body=true, binary-body-mode=true, tag=修改处理, argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}]
