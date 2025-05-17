@@ -1,9 +1,0 @@
-#!name = PicsArt
-#!desc = 解锁订阅
-#!icon = https://i.pinimg.com/474x/d1/00/9f/d1009f9fbe8bc537c38fc059017e667d.jpg
-
-[MITM]
-hostname = api.aidimension.cn
-
-[Script]
-http-response ^https:\/\/api\.aidimension\.cn\/shop\/subscription\/apple\/purchases script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/picsart.js, requires-body=true, tag=解锁处理
