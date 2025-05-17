@@ -6,7 +6,7 @@
 hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
 
 [Rewrite]
-^https:\/\/api\.bilibili\.com\/x\/vip\/ads response-body-json-jq '.data = {}'
+^https:\/\/api\.bilibili\.com\/x\/vip\/ads reject-200
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash response-body-json-jq '.data.show = [] | .data.event_list = []'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select(.goto == "av" and .card_goto == "av"))'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/search response-body-json-jq '.data |= map(select(.type != "recommend"))'
@@ -14,5 +14,6 @@ hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
 
 [Script]
 http-response ^https:\/\/app\.bilibili\.com\/x\/(resource\/show\/tab\/v2|v2\/account\/(mine|ipad)) script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/bilibili.js, requires-body=true, tag=界面处理
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=弹窗处理
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/(?:bilibili\.app\.show\.v1\.Popular\/Index|bilibili\.app\.playurl\.v1\.PlayURL\/PlayView|bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite|bilibili\.app\.view\.v1\.View\/(?:View|ViewProgress|TFInfo)|bilibili\.app\.viewunite\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|bilibili\.community\.service\.dm\.v1\.DM\/(?:DmView|DmSegMobile)|bilibili\.main\.community\.reply\.v1\.Reply\/MainList|bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView|bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll|bilibili\.app\.interface\.v1\.Search\/DefaultWords)$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=广告处理
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(?:playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite|view\.v1\.View\/(?:View|ViewProgress|TFInfo)|viewunite\.v1\.View\/(?:View|ViewProgress|RelatesFeed))$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, ta=播放处理
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=评论处理
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/(?:bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll|bilibili\.app\.interface\.v1\.Search\/DefaultWords)$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=搜索处理
