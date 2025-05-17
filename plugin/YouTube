@@ -7,6 +7,7 @@ hostname = *.googlevideo.com, youtubei.googleapis.com
 
 [Argument]
 blockShorts = switch, false, true, tag = 短视频区
+blockUpload = switch, false, true, tag = 上传按钮
 captionLang = select, "OFF", "zh-Hans", tag = 字幕语言
 
 [Rewrite]
