@@ -6,9 +6,8 @@
 hostname = *.googlevideo.com, youtubei.googleapis.com
 
 [Argument]
-blockUpload = switch, true, false, tag = 上传功能
-blockShorts = switch, true, false, tag = 短视频区
-captionLang = select, "zh-Hans", "OFF", tag = 字幕语言
+blockShorts = switch, false, true, tag = 短视频区
+captionLang = select, "OFF", "zh-Hans", tag = 字幕语言
 
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-video
