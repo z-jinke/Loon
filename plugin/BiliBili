@@ -1,6 +1,6 @@
 #!name = 哔哩哔哩
 #!desc = 拦截广告
-#!icon = https://lh6.googleusercontent.com/proxy/3PczFthU-rRZbqrzgR_q4dKnz2gmz5XLF5WeHCVhywApEezYMAlibZunMQVWRcExiJudG1sUmb5OoE7a7DRyt5mDO8sgKp4Z_hGx
+#!icon = https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/6f/5f/3f/6f5f3f30-1099-6c52-4b84-eb2829eec638/AppIcon-1x_U007emarketing-0-6-0-0-sRGB-85-220.png/1024x1024w.png
 
 [MITM]
 hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
