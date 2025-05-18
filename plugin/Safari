@@ -1,0 +1,9 @@
+#!name = Safari
+#!desc = 定向谷歌
+#!icon = https://www.xuntuu.com/sc/xt/2024/icon_20240423_016.png
+
+[Mitm]
+hostname = www.google.cn
+
+[Rewrite]
+^https:\/\/www\.google\.cn\/search/? 302 https://www.google.com/search
