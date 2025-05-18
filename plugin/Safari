@@ -1,6 +1,6 @@
-#!name = Safari
+#!name = Safari游览器
 #!desc = 定向谷歌
-#!icon = https://www.xuntuu.com/sc/xt/2024/icon_20240423_016.png
+#!icon = https://cdn-icons-png.freepik.com/256/546/546043.png
 
 [Mitm]
 hostname = www.google.cn
