@@ -11,6 +11,7 @@ hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list response-body-json-jq '.data.list[] |= (.duration = 0 | .begin_time = 1893427200 | .end_time = 1893427200)'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select(.goto == "av" and .card_goto == "av"))' '.data.config.trigger_loadmore_left_line_num = 3'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/search response-body-json-jq '.data |= map(select(.type != "recommend"))'
+^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? response-body-json-jq '.data.vip.status = 1 | .data.vip.type = 2 | .data.vip.role = 3 | .data.vip.due_date = 2524608000000'
 ^https:\/\/api\.bilibili\.com\/pgc\/page\/(?:bangumi|cinema\/tab)\? response-body-json-jq '.result.modules |= if . then map(if (.style | startswith("tip")) or (.module_id | IN(241, 1283, 1441, 1284)) then .items = [] elif .style | startswith("banner") then .items |= if . then map(select(.link | contains("play"))) else [] end elif .style | startswith("function") then .items |= if . then map(select(.blink | startswith("bilibili"))) else [] end end) end'
 
 [Script]
