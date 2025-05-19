@@ -7,6 +7,7 @@ hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
 
 [Rewrite]
 ^https:\/\/(app|api)\.bilibili\.com\/x\/(v2\/splash\/show|vip\/ads) reject-200
+^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab|channel) response-body-json-jq '.result.modules |= map(select(.module_id != 1639 and .module_id != 1633))' '.data.modules |= map(select(.id != 2015 and .id != 2038))'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list response-body-json-jq '.data.list[] |= (.duration = 0 | .begin_time = 1893427200 | .end_time = 1893427200)'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select(.goto == "av" and .card_goto == "av"))'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/search response-body-json-jq '.data |= map(select(.type != "recommend"))'
