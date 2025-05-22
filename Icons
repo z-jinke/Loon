@@ -2,9 +2,9 @@
   "name":"图标", "icons":
   [
     {"name":"Loon", "url":"https:\/\/raw.githubusercontent.com\/lige47\/QuanX-icon-rule\/main\/icon\/Loon.png"},
-    {"name":"QuantumultX", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Quantumult_X.png"},
-    {"name":"Proxy", "url":"https://images.icon-icons.com/3571/PNG/512/down_cloud_download_right_arrow_icon_225542.png"},
-    {"name":"fuzai", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Round_Robin.png"},
+    {"name":"Loon1", "url":"https://raw.githubusercontent.com/RainyMoment/Loon/main/Images/Logo1.png"},
+    {"name":"Proxy1", "url":"https://images.icon-icons.com/3571/PNG/512/down_cloud_download_right_arrow_icon_225542.png"},
+    {"name":"Proxy2", "url":"https://s1.aigei.com/src/img/png/1e/1e695b525f2c4c988a273baa9737a1f8.png?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&e=2051020800&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:375J4Kb4Ep7TD4YRKDJFe7N7_T8="},
     {"name":"Auto", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"},
     {"name":"Reject", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Reject.png"},
     {"name":"HongKong", "url":"https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"},
