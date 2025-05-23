@@ -3,7 +3,7 @@
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/NeteaseMusic.png
 
 [MitM]
-hostname = interface*.music.163.com,ipv4.music.163.com
+hostname = interface*.music.163.com, ipv4.music.163.com
 
 [Argument]
 MY = switch, false, true, tag = 漫游
@@ -13,7 +13,6 @@ PRST = switch, false, true, tag = 最近常听
 PRCN = switch, false, true, tag = 专属歌单
 
 [Rewrite]
-^https:\/\/interface\d?\.music\.163\.com\/e?api\/vip\/cashier\/tspopup\/get reject-dict
 ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(ocpc\/)?ad\/ reject-dict
 ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:delivery\/(batch-)?deliver|moment\/tab\/info\/|side-bar\/mini-program\/music-service\/account|yunbei\/account\/entrance\/) reject-dict
 ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:community\/friends\/fans-group\/artist\/group\/|mine\/applet\/redpoint|music\/songshare\/text\/recommend\/|resniche\/position\/play\/new\/|resniche\/tspopup\/show|resource\/comments?\/musiciansaid\/|user\/sub\/artist) reject-dict
