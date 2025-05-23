@@ -3,7 +3,7 @@
 #!icon = https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/YouTube_play_button_square_%282013-2017%29.svg/2048px-YouTube_play_button_square_%282013-2017%29.svg.png
 
 [MitM]
-hostname = *.googlevideo.com, youtubei.googleapis.com
+hostname = *.googlevideo.com,*.googleapis.com
 
 [Argument]
 blockShorts = switch, false, true, tag = 短视频区
