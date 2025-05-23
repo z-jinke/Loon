@@ -3,7 +3,7 @@
 #!icon = https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/6f/5f/3f/6f5f3f30-1099-6c52-4b84-eb2829eec638/AppIcon-1x_U007emarketing-0-6-0-0-sRGB-85-220.png/1024x1024w.png
 
 [MITM]
-hostname = app.bilibili.com, api.bilibili.com, grpc.biliapi.net
+hostname = *.bilibili.com,*.biliapi.net
 
 [Rewrite]
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list response-body-json-jq '.data.list[] |= (.duration = 0 | .begin_time = 1893427200 | .end_time = 1893427200)'
