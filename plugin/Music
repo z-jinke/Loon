@@ -1,9 +1,9 @@
 #!name = 网易云音乐
-#!desc = 去除广告
+#!desc = 拦截广告
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/NeteaseMusic.png
 
 [MitM]
-hostname = interface*.music.163.com, ipv4.music.163.com
+hostname = *.music.163.com
 
 [Argument]
 MY = switch, false, true, tag = 漫游
