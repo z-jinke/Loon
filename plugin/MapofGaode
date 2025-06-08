@@ -2,6 +2,10 @@
 #!desc = 过滤高德地图广告
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/Amap.png
 
+[Rule]
+AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"AMapiPhone*")),REJECT
+AND,((DOMAIN,amap-aos-info-nogw.amap.com),(DOMAIN,free-aos-cdn-image.amap.com),(DOMAIN-SUFFIX,v.smtcdns.com)),REJECT
+
 [Rewrite]
 ^https:\/\/mps\.amap\.com\/ws\/mps\/scene\? reject-dict
 ^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list\? reject-dict
