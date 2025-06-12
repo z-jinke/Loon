@@ -1,9 +1,0 @@
-#!name = Safari游览器
-#!desc = 定向谷歌
-#!icon = https://cdn-icons-png.freepik.com/256/546/546043.png
-
-[Mitm]
-hostname = www.google.cn
-
-[Rewrite]
-^https:\/\/www\.google\.cn\/search/? 302 https://www.google.com/search
