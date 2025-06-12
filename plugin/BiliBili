@@ -12,6 +12,7 @@ DOMAIN, api.biliapi.net, REJECT
 DOMAIN, app.biliapi.net, REJECT
 
 [Rewrite]
+^https:\/\/(app|api)\.bilibili\.com\/x\/(v2\/splash\/show|vip\/ads) mock-response-body data-type=json status-code=200
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list response-body-json-jq '.data.list[] |= (.duration = 0 | .begin_time = 1893427200 | .end_time = 1893427200)'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index response-body-json-jq '.data.items |= map(select(.goto == "av" and .card_goto == "av"))' '.data.config.trigger_loadmore_left_line_num = 3'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? response-body-json-jq '.data.vip.status = 1 | .data.vip.type = 2 | .data.vip.role = 3 | .data.vip.due_date = 2524608000000'
@@ -20,7 +21,3 @@ DOMAIN, app.biliapi.net, REJECT
 ^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab|channel) response-body-json-jq '.result.modules |= map(select(.module_id != 1639 and .module_id != 1633))' '.data.modules |= map(select(.id != 2015 and .id != 2038))'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine\? response-body-json-jq 'del(.data.modular_vip_section) | .data.show_creative = 0 | .data.sections_v2[] |= (del(.button) | if .title == "推荐服务" then del(.title) | .items |= map(select(.id as $id | [$id] | inside([400,401,402,403,404,622,406,2909,3046,913,514,924,968,990,3525]) | not)) elif .title == "更多服务" then del(.title) | .items |= map(if .id == 407 then .title = "客服中心" elif .id == 410 then .title = "个人设置" else . end) | .items |= map(select(.id as $id | [$id] | inside([812,964]) | not)) else . end)'
 ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine\/ipad\? response-body-json-jq '.data.ipad_recommend_sections |= map(select(.id != 758 and .id != 759 and .id != 760)) | .data.ipad_more_sections |= map(if .id == 764 then .title = "个人设置" elif .id == 763 then .title = "客服中心" else . end) | .data.ipad_more_sections |= map(select(.id != 965)) | del(.data.ipad_upper_sections)'
-^https:\/\/(app|api)\.bilibili\.com\/x\/(v2\/splash\/show|vip\/ads) mock-response-body data-type=json status-code=200
-
-[Script]
-http-response ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, tag=广告处理
