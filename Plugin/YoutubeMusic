@@ -1,5 +1,5 @@
 #!name = Youtube(Music)
-#!desc = 过滤广告,画中画,字幕翻译,歌词翻译,后台播放
+#!desc = 过滤广告,画中画,字幕翻译,歌词翻译
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/YouTube.png
 
 [Argument]
