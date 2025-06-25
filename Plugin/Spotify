@@ -3,7 +3,7 @@
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/Spotify.png
 
 [Argument]
-tab = switch, false, true, tag = 移除底栏创建
+tab = switch, true, false, tag = 移除底栏创建
 useractivity = switch, true, false, tag = Apple设备接力
 
 [Rewrite]
