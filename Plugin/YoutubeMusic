@@ -1,13 +1,13 @@
 #!name = Youtube(Music)
-#!desc = 过滤广告,画中画,字幕翻译,歌词翻译,支持后台播放
+#!desc = 过滤广告,画中画,字幕翻译,歌词翻译,后台播放
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/YouTube.png
 
 [Argument]
-blockUpload = switch, true, false, tag = 移除上传按钮, desc = 用于隐藏YouTube底栏的上传按钮
-blockShorts = switch, true, false, tag = 移除Shorts按钮, desc = 用于隐藏YouTube底栏的Shorts按钮
-blockImmersive = switch, true, false, tag = 移除选段按钮, desc = 用于隐藏YouTube Music底栏的选段按钮
-captionLang = select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag = 字幕翻译语言, desc = 选择翻译为何种语言字幕
-lyricLang = select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag = 歌词翻译语言, desc = 选择翻译为何种语言字幕
+blockShorts = switch, true, false, tag = 移除Shorts
+blockUpload = switch, true, false, tag = 移除上传按钮
+blockImmersive = switch, true, false, tag = 移除选段按钮
+captionLang = select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag = 字幕翻译语言
+lyricLang = select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag = 歌词翻译语言
 
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
