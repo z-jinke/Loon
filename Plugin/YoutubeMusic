@@ -1,6 +1,6 @@
 #!name = Youtube(Music)
 #!desc = 过滤广告,画中画,字幕翻译,歌词翻译
-#!icon = https://s1.chu0.com/src/img/png/28/28cf7cd5471243e198a7a8ae87e9ef42.png?e=2051020800&token=1srnZGLKZ0Aqlz6dk7yF4SkiYf4eP-YrEOdM1sob:-b2NhYY_o9aAl1O_IkmBi0abvMQ=
+#!icon = https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png
 
 [Argument]
 blockShorts = switch, true, false, tag = 移除Shorts
