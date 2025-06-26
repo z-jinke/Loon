@@ -1,6 +1,6 @@
 #!name = Youtube(Music)
 #!desc = 过滤广告,画中画,字幕翻译,歌词翻译
-#!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/YouTube.png
+#!icon = https://img.icons8.com/color/512/youtube-squared.png
 
 [Argument]
 blockShorts = switch, true, false, tag = 移除Shorts
