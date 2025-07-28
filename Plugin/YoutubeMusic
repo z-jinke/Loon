@@ -1,7 +1,7 @@
 #!name = Youtube(Music)
 #!desc = 过滤视频和音乐广告自定义配置
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/YouTube.png
-#!date = 2025-06-15 00:00
+#!date = 2025-07-28
 
 [MitM]
 hostname = *.googlevideo.com, youtubei.googleapis.com
