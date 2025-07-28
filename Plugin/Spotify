@@ -1,5 +1,5 @@
 #!name = Spotify音乐
-#!desc = 过滤广告解锁会员
+#!desc = 过滤广告解锁会员自定义配置
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/Spotify.png
 #!date = 2025-07-28
 
@@ -7,7 +7,7 @@
 hostname = gae2-spclient.spotify.com,guc3-spclient.spotify.com,spclient.wg.spotify.com
 
 [Argument]
-tab = switch, false, true, tag = 创建按钮
+tab = switch, true, false, tag = 创建按钮
 useractivity = switch, true, false, tag = 设备接力
 
 [Rewrite]
