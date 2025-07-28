@@ -1,7 +1,5 @@
 #!name = Youtube(Music)
-#!desc = 过滤视频和音乐广告自定义配置
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/YouTube.png
-#!date = 2025-07-28
 
 [MitM]
 hostname = *.googlevideo.com, youtubei.googleapis.com
@@ -14,7 +12,7 @@ captionLang = select, "zh-Hans", "zh-Hant", "off", tag = 字幕翻译
 lyricLang = select, "zh-Hans", "zh-Hant", "off", tag = 歌词翻译
 
 [Rewrite]
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
+^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
 
 [Script]
 http-response ^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$ script-path = https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js, requires-body = true, binary-body-mode = true, tag = 广告处理, argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}]
