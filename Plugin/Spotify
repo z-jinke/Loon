@@ -1,0 +1,19 @@
+#!name = Spotify音乐
+#!desc = 过滤广告解锁会员
+#!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/Spotify.png
+#!date = 2025-07-28
+
+[MitM]
+hostname = gae2-spclient.spotify.com,guc3-spclient.spotify.com,spclient.wg.spotify.com
+
+[Argument]
+tab = switch, false, true, tag = 创建按钮
+useractivity = switch, true, false, tag = 设备接力
+
+[Rewrite]
+^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/pendragon\/ reject-dict
+
+^https:\/\/(gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/artistview\/v1\/artist\/(.*)&platform=iphone header https://$1.spotify.com/artistview/v1/artist/$2&platform=ipad
+
+[Script]
+http-response ^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service) script-path = https://raw.githubusercontent.com/001ProMax/Surge/main/Script/Spotify.Crack.Dev.js, requires-body = true, binary-body-mode = true, timeout = 10, tag = 解锁处理, argument = [{tab},{useractivity}]
