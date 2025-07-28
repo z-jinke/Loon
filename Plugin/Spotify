@@ -1,7 +1,5 @@
 #!name = Spotify音乐
-#!desc = 过滤广告解锁会员自定义配置
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/Spotify.png
-#!date = 2025-07-28
 
 [MitM]
 hostname = gae2-spclient.spotify.com,guc3-spclient.spotify.com,spclient.wg.spotify.com
