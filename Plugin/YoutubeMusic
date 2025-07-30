@@ -2,9 +2,6 @@
 #!desc = 过滤广告个性化配置功能
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/YouTube.png
 
-[MitM]
-hostname = *.googlevideo.com, youtubei.googleapis.com
-
 [Argument]
 blockUpload = switch, true, false, tag = 上传功能
 blockShorts = switch, true, false, tag = 短视频区
@@ -17,3 +14,6 @@ lyricLang = select, "zh-Hans", "zh-Hant", "off", tag = 歌词翻译
 
 [Script]
 http-response ^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$ script-path = https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js, requires-body = true, binary-body-mode = true, tag = 广告处理, argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}]
+
+[MitM]
+hostname = *.googlevideo.com, youtubei.googleapis.com
