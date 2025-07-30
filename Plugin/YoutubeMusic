@@ -1,4 +1,5 @@
 #!name = Youtube(Music)
+#!desc = 过滤广告个性化配置功能
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/YouTube.png
 
 [MitM]
