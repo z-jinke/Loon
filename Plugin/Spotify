@@ -2,9 +2,6 @@
 #!desc = 解锁会员个性化配置功能
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/Spotify.png
 
-[MitM]
-hostname = gae2-spclient.spotify.com,guc3-spclient.spotify.com,spclient.wg.spotify.com
-
 [Argument]
 tab = switch, true, false, tag = 创建按钮
 useractivity = switch, true, false, tag = 设备接力
@@ -16,3 +13,6 @@ useractivity = switch, true, false, tag = 设备接力
 
 [Script]
 http-response ^https:\/\/(?:gae2-spclient|guc3-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service) script-path = https://raw.githubusercontent.com/001ProMax/Surge/main/Script/Spotify.Crack.Dev.js, requires-body = true, binary-body-mode = true, timeout = 10, tag = 解锁处理, argument = [{tab},{useractivity}]
+
+[MitM]
+hostname = gae2-spclient.spotify.com, guc3-spclient.spotify.com, spclient.wg.spotify.com
