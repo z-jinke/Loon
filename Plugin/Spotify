@@ -1,4 +1,5 @@
 #!name = Spotify音乐
+#!desc = 解锁会员个性化配置功能
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/Spotify.png
 
 [MitM]
