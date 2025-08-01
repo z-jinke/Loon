@@ -6,8 +6,6 @@
 blockUpload = switch, true, false, tag = 上传功能
 blockShorts = switch, true, false, tag = 短视频区
 blockImmersive = switch, true, false, tag = 选段按钮
-captionLang = select, "zh-Hans", "zh-Hant", "off", tag = 字幕翻译
-lyricLang = select, "zh-Hans", "zh-Hant", "off", tag = 歌词翻译
 
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
