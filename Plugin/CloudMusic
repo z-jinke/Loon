@@ -13,7 +13,7 @@ GZ = switch, true, false, tag = 关注
 
 [Script]
 http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:batch|v2\/resource\/comment\/floor\/get|link\/page\/discovery\/resource\/show) script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body = true, binary-body-mode = true, tag = 广告处理
-http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/home\/framework\/tab script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body = true, binary-body-mode = true, tag = 底栏处理, argument=[{MY},{DT},{FX},{GZ}]
+http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/home\/framework\/tab script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body = true, binary-body-mode = true, tag = 配置处理, argument=[{MY},{DT},{FX},{GZ}]
 http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/position\/show\/resource script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body = true, binary-body-mode = true, tag = 我的处理
 
 [MitM]
