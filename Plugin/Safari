@@ -1,0 +1,9 @@
+#!name = Safari定向
+#!desc = 解除限制重定向Google
+#!icon = https://images.icon-icons.com/2108/PNG/512/safari_icon_130837.png
+
+[Script]
+http-request ^https:\/\/www\.google\.cn script-path=https://github.com/z-jinke/LooN/raw/refs/heads/main/Js/Google.js, requires-body=true, tag=定向处理
+
+[Mitm]
+hostname = www.google.cn
