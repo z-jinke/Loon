@@ -8,10 +8,11 @@ DT = switch, true, false, tag = 笔记
 GZ = switch, true, false, tag = 关注
 
 [Rewrite]
-http-response ^https:\/\/(?:ipv4|interface\d+)?.music.163.com/eapi/(?:batch|v2/resource/comment/floor/get|link/page/discovery/resource/show|link/position/show/resource) script-path=https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body=true, binary-body-mode=true, tag=广告处理
+^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/(?:e?api\/(?:ocpc\/)?ad\/|e?api\/delivery\/(?:batch-)?deliver|e?api\/moment\/tab\/info\/|e?api\/side-bar\/mini-program\/music-service\/account|e?api\/yunbei\/account\/entrance\/|e?api\/community\/friends\/fans-group\/artist\/group\/|e?api\/mine\/applet\/redpoint|e?api\/music\/songshare\/text\/recommend\/|e?api\/resniche\/position\/play\/new\/|e?api\/resniche\/tspopup\/show|e?api\/resource\/comments?\/musiciansaid\/|e?api\/user\/sub\/artist|e?api\/ios\/version|e?api\/mlivestream\/entrance\/playpage\/|e?api\/link\/position\/show\/strategy|e?api\/link\/scene\/show\/resource|e?api\/v1\/content\/exposure\/comment\/banner\/|w?e?api\/search\/default|w?e?api\/activity\/bonus\/playpage\/time\/query|w?e?api\/resource-exposure\/|w?e?api\/search\/chart\/|w?e?api\/search\/rcmd\/keyword\/|w?e?api\/search\/specialkeyword\/|eapi\/my\/podcast\/tab\/recommend) mock-response-body data-type=text status-code=200
 
-http-response ^https:\/\/(?:ipv4|interface\d+)?.music.163.com/eapi/link/home/framework/tab script-path=https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body=true, binary-body-mode=true, tag=配置处理, argument=[{MY},{DT},{FX},{GZ}]
-[Script
+[Script]
+http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/home\/framework\/tab script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body=true, binary-body-mode=true, tag=配置处理, argument=[{MY},{DT},{FX},{GZ}]
+http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(link\/(?:position\/show\/resource|page\/discovery\/resource\/show)|batch|v2\/resource\/comment\/floor\/get) script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body=true, binary-body-mode=true, tag=广告处理
 
 [MitM]
 hostname = interface*.music.163.com, ipv4.music.163.com
