@@ -11,7 +11,7 @@ blockImmersive = switch, true, false, tag = 选段按钮
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
 
 [Script]
-http-response ^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$ script-path = https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js, requires-body = true, binary-body-mode = true, tag = 广告处理, argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}]
+http-response ^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$ script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js, requires-body=true, binary-body-mode=true, tag=广告处理, argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}]
 
 [MitM]
 hostname = *.googlevideo.com, youtubei.googleapis.com
