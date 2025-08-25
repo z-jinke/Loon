@@ -5,11 +5,11 @@
 
 
 [Argument]
-FX = switch, false, true, tag = 发现
-MY = switch, false, true, tag = 漫游
-DT = switch, true, false, tag = 笔记
-GZ = switch, true, false, tag = 关注
-PRGG = switch, false, true, tag = 问候语
+FX = switch, false, true, tag = 移除发现
+MY = switch, false, true, tag = 移除漫游
+DT = switch, true, false, tag = 移除笔记
+GZ = switch, true, false, tag = 移除关注
+PRGG = switch, false, true, tag = 移除问候语
 
 [Rewrite]
 http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/(?:e?api\/(ocpc\/)?ad\/|w?e?api\/search\/default) mock-response-body data-type=text
