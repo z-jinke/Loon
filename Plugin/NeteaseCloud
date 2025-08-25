@@ -9,17 +9,7 @@ FX = switch, false, true, tag = 发现
 MY = switch, false, true, tag = 漫游
 DT = switch, true, false, tag = 笔记
 GZ = switch, true, false, tag = 关注
-
-PRGG = switch, false, true, tag = 隐藏[首页-问候语], desc = 是否隐藏首页问候语
-PRRK = switch, false, true, tag = 隐藏[首页-排行榜], desc = 是否隐藏首页排行榜
-PRDRD = switch, false, true, tag = 隐藏[首页-每日推荐], desc = 是否隐藏首页每日推荐
-PRSCVPT = switch, false, true, tag = 隐藏[首页-推荐歌单], desc = 是否隐藏首页推荐歌单
-PRST = switch, false, true, tag = 隐藏[首页-最近常听], desc = 是否隐藏首页最近常听
-PRRR = switch, false, true, tag = 隐藏[首页-雷达歌单], desc = 是否隐藏首页雷达歌单
-HMPR = switch, false, true, tag = 隐藏[首页-音乐合伙人], desc = 是否隐藏首页音乐合伙人
-PRMST = switch, false, true, tag = 隐藏[首页-推荐专属歌单], desc = 是否隐藏首页专属歌单
-PRCN = switch, false, true, tag = 隐藏[首页-你的专属歌单], desc = 是否隐藏首页你的专属歌单
-
+PRGG = switch, false, true, tag = 问候语
 
 [Rewrite]
 http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/(?:e?api\/(ocpc\/)?ad\/|w?e?api\/search\/default) mock-response-body data-type=text
@@ -29,7 +19,7 @@ http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/(?:eapi|weapi)\
 http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(link\/page\/discovery\/resource\/show|batch|v2\/resource\/comment\/floor\/get) script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body = true, binary-body-mode = true, tag = 广告处理
 http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/home\/framework\/tab script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body = true, binary-body-mode = true,  tag = 配置处理, argument=[{MY},{DT},{FX},{GZ}]
 
-http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:homepage\/block\/page|link\/page\/rcmd\/(?:block\/resource\/multi\/refresh|resource\/show)) script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body = true, binary-body-mode = true, tag = 配置处理, argument=[{PRGG},{PRRK},{PRDRD},{PRSCVPT},{PRST},{PRRR},{HMPR},{PRMST},{PRCN}]
+http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(?:homepage\/block\/page|link\/page\/rcmd\/(?:block\/resource\/multi\/refresh|resource\/show)) script-path = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body = true, binary-body-mode = true, tag = 配置处理, argument=[{PRGG}]
 
 [MitM]
 hostname = interface*.music.163.com, ipv4.music.163.com
