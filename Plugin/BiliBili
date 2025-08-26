@@ -1,11 +1,10 @@
 #!name = 哔哩哔哩
 #!desc = 屏蔽客户端广告
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/BilibiliPink.png
-#!date = 2025-08-25
+#!date = 2025-08-26
 
 [Argument]
-purifyTopReplies = switch, true, false, tag = 拦截评论区广告
-purifyWebpage = switch, true, false, tag = 拦截直播区广告
+purifyTopReplies = switch, true, false, tag = 拦截广告
 
 [Rewrite]
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads\/materials\? mock-response-body data-type=json data="{}" status-code=200
@@ -21,7 +20,6 @@ purifyWebpage = switch, true, false, tag = 拦截直播区广告
 
 [Script]
 http-response ^https:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(app\.(show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(unite)?\.v1\.View\/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.response.js, requires-body = true, binary-body-mode = true, tag = 配置处理, argument=[{purifyTopReplies}]
-http-response ^https:\/\/live\.bilibili\.com\/blackboard\/era\/.+\.html\? script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/webpage.bilibili.js, requires-body = true, tag = 配置处理, enable={purifyWebpage}
 
 [MitM]
 hostname = grpc.biliapi.net, app.bilibili.com, api.bilibili.com, live.bilibili.com
