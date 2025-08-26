@@ -1,7 +1,7 @@
 #!name = Youtube(Music)
 #!desc = 屏蔽客户端广告
-#!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/YouTube.png
-#!date = 2025-08-25
+#!icon = https://img.ixintu.com/upload/jpg/20210623/b7b596e584ccf42adb1919e455265d79_27640_512_512.jpg!con
+#!date = 2025-08-26
 
 [Argument]
 blockShorts = switch, true, false, tag = 移除短片
