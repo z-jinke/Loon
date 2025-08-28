@@ -1,18 +1,18 @@
 #!name = Spotify音乐
 #!desc = 解锁客户端订阅
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/Spotify.png
-#!date = 2025-08-25
+#!date = 2025-08-27
 
 [Argument]
-useractivity = switch, true, false, tag = 设备接力
-tab = switch, false, true, tag = 移除创建
+useractivity = switch, true, false, tag=设备接力
+tab          = switch, true, false, tag=移除创建
 
 [Rewrite]
 ^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/pendragon\/ reject-dict
 ^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/artistview\/v1\/artist\/(.*)&platform=iphone header https://spclient.wg.spotify.com/artistview/v1/artist/$1&platform=ipad
 
 [Script]
-http-response ^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service) script-path = https://raw.githubusercontent.com/001ProMax/Surge/main/Script/Spotify.Crack.Dev.js, requires-body=true, binary-body-mode=true, tag=配置处理, argument=[{tab},{useractivity}]
+http-response ^https:\/\/(?:\w+-spclient|spclient\.wg)\.spotify\.com(?::443)?\/(?:bootstrap|user-customization-service) script-path=https://raw.githubusercontent.com/001ProMax/Surge/main/Script/Spotify.Crack.Dev.js, requires-body=true, binary-body-mode=true, timeout=10, tag=配置处理, argument=[{tab},{useractivity}]
 
 [MitM]
 hostname = *-spclient.spotify.com, spclient.wg.spotify.com
