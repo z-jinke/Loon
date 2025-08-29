@@ -3,9 +3,6 @@
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/Sub-Store.png
 #!date = 2025-08-29
 
-[Rule]
-DOMAIN,sub-store.vercel.app,PROXY
-
 [Script]
 http-request ^https:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body=true, timeout=10, tag=后端处理
 http-request ^https:\/\/sub\.store script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js, requires-body=true, timeout=10, tag=前端处理
