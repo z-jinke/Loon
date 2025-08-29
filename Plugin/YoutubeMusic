@@ -1,15 +1,12 @@
 #!name = Youtube(Music)
 #!desc = 屏蔽客户端广告
 #!icon = https://img.ixintu.com/upload/jpg/20210623/b7b596e584ccf42adb1919e455265d79_27640_512_512.jpg!con
-#!date = 2025-08-27
+#!date = 2025-08-29
 
 [Argument]
 blockShorts    = switch, true, false, tag = 移除短片
 blockUpload    = switch, true, false, tag = 移除上传
 blockImmersive = switch, true, false, tag = 移除选段
-
-[Rule]
-AND,((DOMAIN-KEYWORD,google),(PROTOCOL,QUIC)),REJECT
 
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-dict
