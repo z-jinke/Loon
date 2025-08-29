@@ -1,10 +1,10 @@
 #!name = 网易云音乐
 #!desc = 屏蔽客户端广告
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/NeteaseMusic.png
-#!date = 2025-08-27
+#!date = 2025-08-29
 
 [Argument]
-MY = switch, false, true, tag = 移除漫游
+MY = switch, true, false, tag = 移除漫游
 DT = switch, true, false, tag = 移除笔记
 GZ = switch, true, false, tag = 移除关注
 
