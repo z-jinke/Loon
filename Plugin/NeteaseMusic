@@ -1,12 +1,12 @@
 #!name = 网易云音乐
-#!desc = 过滤客户端广告
+#!desc = 屏蔽客户端广告
 #!icon = https://raw.githubusercontent.com/sooyaaabo/Loon/main/Icon/App-Icon/NeteaseMusic.png
 #!date = 2025-08-27
 
 [Argument]
-MY = switch, false, true, tag=移除漫游
-DT = switch, true, false, tag=移除笔记
-GZ = switch, true, false, tag=移除关注
+MY = switch, false, true, tag = 移除漫游
+DT = switch, true, false, tag = 移除笔记
+GZ = switch, true, false, tag = 移除关注
 
 [Rewrite]
 http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/(?:e?api\/(ocpc\/)?ad\/|w?e?api\/search\/default) mock-response-body data-type=text
@@ -17,4 +17,4 @@ http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/(link\/pa
 http-response ^https:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/eapi\/link\/home\/framework\/tab script-path=https://raw.githubusercontent.com/sooyaaabo/Loon/main/Script/NeteaseMusic/NeteaseMusicAds.js, requires-body=true, binary-body-mode=true, timeout=10, tag=配置处理, argument=[{MY},{DT},{GZ}]
 
 [MitM]
-hostname = interface*.music.163.com, ipv4.music.163.com
+hostname = interface*.music.163.com,ipv4.music.163.com
