@@ -4,14 +4,13 @@
 #!date = 2025-08-29
 
 [Argument]
-purifyTopReplies = switch, true, false, tag = 评论广告
+purifyTopReplies = switch, true, false, tag = 评论区过滤
 
 [Rule]
 DOMAIN,api.biliapi.com,REJECT
 DOMAIN,app.biliapi.com,REJECT
 DOMAIN,api.biliapi.net,REJECT
 DOMAIN,app.biliapi.net,REJECT
-AND,((DOMAIN-SUFFIX,chat.bilibili.com),(OR,((DOMAIN-KEYWORD,stun),(DOMAIN-KEYWORD,tracker)))),REJECT
 
 [Rewrite]
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(list|show|event\/list2) response-body-json-jq '.data |= with_entries(if .key | IN("show","event_list") then .value = [] else . end)'
